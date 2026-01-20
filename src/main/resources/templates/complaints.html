@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Complaints</h2>
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="c : ${complaints}">
+        <td th:text="${c.title}"></td>
+        <td th:text="${c.status}"></td>
+        <td>
+            <a th:href="@{/resolve/{id}(id=${c.id})}">Resolve</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
